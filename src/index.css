@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors from Style Guide */
+  --color-prussian: hsl(210, 46%, 20%);
+  --color-citrine: hsl(53, 91%, 55%);
+
+  /* Neutral Palette */
+  --color-dark-prussian: hsl(210, 63%, 9%);
+  --color-dark: hsl(208, 59%, 6%);
+  --color-medium: hsl(212, 8%, 60%);
+  --color-medium-light: hsl(212, 12%, 70%);
+  --color-light: hsl(0, 0%, 95%);
+
+  /* Typography */
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+
+  /* Custom breakpoint */
+  --breakpoint-split: 575px;
+}
+
+@layer base {
+  body {
+    /* Apply Dark Mode by default as per Blueprint */
+    @apply bg-dark-prussian text-light font-sans;
+  }
+}
