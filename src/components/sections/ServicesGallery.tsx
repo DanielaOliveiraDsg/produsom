@@ -10,9 +10,6 @@ export const ServicesGallery: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-extralight uppercase tracking-[0.3em] text-light">
             Nossos <span className="font-semibold">Serviços</span>
           </h2>
-          <button className="px-8 py-3 border border-light text-light uppercase tracking-widest text-xs font-bold hover:bg-light hover:text-dark-prussian transition-all duration-300 rounded-md">
-            Ver Todos
-          </button>
         </div>
 
         {/* grid */}
