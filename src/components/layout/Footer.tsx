@@ -4,6 +4,9 @@ import simbol from "@/assets/images/logos/produsom-LOGO-simbolo-amarelo-branco.p
 import { SocialIcon } from "../ui/Socials";
 import { MapPin } from "lucide-react";
 
+import InstagramSvg from "@/assets/images/icons/icon-instagram.svg";
+import WhatsappSvg from "@/assets/images/icons/icon-whatsapp.svg";
+
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   const { pathname } = useLocation();
@@ -45,27 +48,8 @@ export const Footer: React.FC = () => {
 
           <div className="flex flex-col items-center md:items-end space-y-4">
             <div className="flex space-x-6">
-              <SocialIcon href={"https://www.instagram.com/produsom_someluz?igsh=bmVtdGdwMTc4Y2Z2"} iconSrc={"src/assets/images/icons/icon-instagram.svg"} label={"Instagram"} />
-              <SocialIcon href={"https://wa.me/5551999783245?text=Produsom"} iconSrc={"src/assets/images/icons/icon-whatsapp.svg"} label={"WhatsApp"} />
-              {/* <a
-                href="https://www.instagram.com/produsom_someluz?igsh=bmVtdGdwMTc4Y2Z2"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-light transition-transform duration-300 hover:scale-110"
-              >
-                <img
-                src="src/assets/images/icons/icon-instagram.svg"
-                alt="Instagram"
-                className="w-6 h-6" />
-              </a>
-              <a
-                href="https://wa.me/5551999783245?text=Produsom"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-light transition-transform duration-300 hover:scale-110"
-              >
-                <MessageCircle size={24} />
-              </a> */}
+              <SocialIcon href={"https://www.instagram.com/produsom_someluz?igsh=bmVtdGdwMTc4Y2Z2"} iconSrc={InstagramSvg} label={"Instagram"} />
+              <SocialIcon href={"https://wa.me/5551999783245?text=Produsom"} iconSrc={WhatsappSvg} label={"WhatsApp"} />
             </div>
           </div>
         </div>

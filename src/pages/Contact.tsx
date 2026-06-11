@@ -5,6 +5,9 @@ import { SocialIcon } from "@/components/ui/Socials";
 import ProdusomIcon from "@/assets/images/logos/produsom-LOGO-simbolo-original.png";
 import { ModalSuccessMsg } from "@/components/ui/ModalSuccessMsg";
 
+import InstagramSvg from "@/assets/images/icons/icon-instagram-black.svg";
+import WhatsappSvg from "@/assets/images/icons/whatsapp.svg";
+
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -108,12 +111,12 @@ export const Contact: React.FC = () => {
               href={
                 "https://www.instagram.com/produsom_someluz?igsh=bmVtdGdwMTc4Y2Z2"
               }
-              iconSrc={"src/assets/images/icons/icon-instagram-black.svg"}
+              iconSrc={InstagramSvg}
               label={"Instagram"}
             />
             <SocialIcon
               href={"https://wa.me/5551999783245?text=Produsom"}
-              iconSrc={"src/assets/images/icons/whatsapp.svg"}
+              iconSrc={WhatsappSvg}
               label={"WhatsApp"}
             />
           </div>
