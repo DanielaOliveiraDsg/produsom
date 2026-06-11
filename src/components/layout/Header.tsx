@@ -20,71 +20,81 @@ export const Header: React.FC = () => {
     if (isOpen) setIsOpen(false);
   };
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-dark-prussian/95 backdrop-blur-md py-4 shadow-lg"
-          : "bg-transparent py-6"
-      }`}
-    >
-      <nav className="container mx-auto px-6 flex justify-between items-center">
-        {/* Logo - Using the Horizontal White/Yellow version for dark backgrounds */}
-        <Link to="/" className="z-50">
-          <img
-            src={Logo}
-            alt="Produsom Logo"
-            className="h-9 md:h-10 w-auto object-contain"
-          />
-        </Link>
+    <>
+      <header
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-dark-prussian/95 backdrop-blur-md py-4 shadow-lg"
+            : "bg-transparent py-6"
+        }`}
+      >
+        <nav className="container mx-auto px-6 flex justify-between items-center">
+          {/* Logo */}
+          <Link to="/" className="relative z-60">
+            <img
+              src={Logo}
+              alt="Produsom Logo"
+              className="h-9 md:h-10 w-auto object-contain"
+            />
+          </Link>
 
-        {/* Desktop Navigation */}
-        <ul className="hidden md:flex space-x-8">
-          {navLinks.map((link) => (
-            <li key={link.path}>
-              <Link
-                to={link.path}
-                className={`text-sm uppercase tracking-widest font-medium transition-colors duration-200 hover:text-citrine ${
-                  location.pathname === link.path
-                    ? "text-citrine"
-                    : "text-light"
-                }`}
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        {/* Mobile Toggle */}
-        <button
-          className="md:hidden z-50 text-light hover:text-citrine transition-colors cursor-pointer"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle Menu"
-        >
-          {isOpen ? <X size={32} /> : <Menu size={32} />}
-        </button>
-
-        {/* Mobile Menu Overlay */}
-        <div
-          className={`fixed inset-0 bg-dark-prussian flex flex-col justify-center items-center transition-transform duration-300 ease-in-out ${
-            isOpen ? "translate-x-0" : "translate-x-full"
-          } md:hidden`}
-        >
-          <ul className="flex flex-col space-y-8 text-center">
+          {/* Desktop Navigation */}
+          <ul className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
               <li key={link.path}>
                 <Link
                   to={link.path}
-                  onClick={closeMenu} // Closes menu when a link is clicked
-                  className="text-3xl font-light uppercase tracking-[0.2em] text-light hover:text-citrine transition-colors"
+                  className={`text-sm uppercase tracking-widest font-medium transition-colors duration-200 hover:text-citrine ${
+                    location.pathname === link.path
+                      ? "text-citrine"
+                      : "text-light"
+                  }`}
                 >
                   {link.name}
                 </Link>
               </li>
             ))}
           </ul>
-        </div>
-      </nav>
-    </header>
+
+          {/* Mobile Toggle — z-[60] keeps it above the z-50 overlay */}
+          <button
+            className="md:hidden relative z-60 text-light hover:text-citrine transition-colors cursor-pointer"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle Menu"
+          >
+            <Menu size={32} />
+          </button>
+        </nav>
+      </header>
+
+      {/* Mobile Menu Overlay — sibling to <header> so backdrop-blur on the header
+          does not create a new containing block that clips this fixed element */}
+      <div
+        className={`fixed inset-0 z-50 bg-dark-prussian flex flex-col items-center justify-start overflow-y-auto pt-24 transition-transform duration-300 ease-in-out md:hidden ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <button
+          className="absolute top-6 right-6 text-light hover:text-citrine transition-colors cursor-pointer"
+          onClick={closeMenu}
+          aria-label="Close Menu"
+        >
+          <X size={32} />
+        </button>
+        <ul className="flex flex-col space-y-8 text-center">
+          {navLinks.map((link) => (
+            <li key={link.path}>
+              <Link
+                to={link.path}
+                onClick={closeMenu}
+                className="text-3xl font-light uppercase tracking-[0.2em] text-light hover:text-citrine transition-colors"
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
