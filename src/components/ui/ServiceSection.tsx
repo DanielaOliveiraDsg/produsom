@@ -33,10 +33,10 @@ export const ServiceSection: React.FC<ServiceSectionProps> = ({
       </div>
 
       <div className="w-full md:w-1/2 space-y-5">
-        <h2 className="text-3xl lg:text-5xl font-bold text-light uppercase tracking-wider">
+        <h2 className="text-3xl lg:text-4xl font-bold text-light uppercase tracking-wider">
           {service.title}
         </h2>
-        <p className="text-medium-light lg:text-2xl leading-relaxed">
+        <p className="text-medium-light lg:text-[20px] leading-relaxed">
           {service.description_pt}
         </p>
       </div>

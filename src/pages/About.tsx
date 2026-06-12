@@ -2,11 +2,10 @@
 import React from "react";
 import { Button } from "../components/ui/Button";
 
-// Asset placeholders - update paths with your final assets later
-import TeamPhoto from "@/assets/images/photos/team.png"; // Using existing structure
-import FounderPhoto from "@/assets/images/photos/founder-1.jpg"; // Placeholder for founder
-import LogoAnimationGIf from "@/assets/images/logos/produsom-LOGO-simbolo-original.png"; // Placeholder for icon animation sketch
-import SignaturesGif from "@/assets/images/logos/produsom-LOGO-horizontal-original.png"; // Placeholder for signature showcase
+import TeamPhoto from "@/assets/images/photos/team.png";
+import FounderPhoto from "@/assets/images/photos/founder-1.jpg";
+import LogoAnimationGif from "@/assets/images/logos/produsom_icon_gif_1.gif";
+import Signatures from "@/assets/images/logos/produsom-LOGO-horizontal-original.png";
 
 export const About: React.FC = () => {
   return (
@@ -49,7 +48,7 @@ export const About: React.FC = () => {
       </section>
 
       {/* Section: Our History & Team */}
-      <section className="py-12 lg:py-24 px-8">
+      <section className="py-12 lg:py-24 px-8 lg:px-16">
         <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center gap-12">
           <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
             <h2 className="text-2xl text-center lg:text-3xl font-semibold uppercase tracking-widest text-light">
@@ -89,18 +88,18 @@ export const About: React.FC = () => {
       </section>
 
       {/* Section: Rebrand Evolution */}
-      <section className="py-6 lg:py-32 bg-light px-8">
+      <section className="py-6 lg:py-32 bg-light px-8 lg:px-16">
         <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Left: Branding GIF */}
           <div className="lg:w-1/3 rounded-md pt-4">
             <img
-              src={LogoAnimationGIf}
+              src={LogoAnimationGif}
               alt="Animação do desenho geométrico do ícone da Produsom"
-              className="w-auto h-45 lg:h-52 object-contain rounded-sm"
+              className="w-auto h-52 lg:h-58 object-contain rounded-sm opacity-97"
             />
           </div>
           {/* Right: Narrative */}
-          <div className="space-y-5">
+          <div className="space-y-5 lg:w-[70%] lg:px-2">
             <h2 className="text-2xl lg:text-3xl font-semibold uppercase tracking-wider text-dark-prussian">
               Reposicionamento
             </h2>
@@ -117,10 +116,10 @@ export const About: React.FC = () => {
               audiovisuais.
             </p>
           </div>
-          <div className="pb-12 pt-5 rounded-md lg:w-[65%]">
+          <div className="pb-12 pt-5 rounded-md lg:w-[60%]">
             <img
-              src={SignaturesGif}
-              alt="Variações de assinaturas da marca Produsom: horizontal, vertical e símbolo"
+              src={Signatures}
+              alt="Assinatura logo horizontal da Produsom"
               className="w-auto h-30 object-contain rounded-sm"
             />
           </div>

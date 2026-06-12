@@ -1,7 +1,7 @@
 // src/components/ui/EventCard.tsx
 import React, { useState } from "react";
 import type { PastEvent } from "../../data/events";
-import { Lightbox } from "./Lightbox"; // Importando nosso novo componente!
+import { Lightbox } from "./Lightbox";
 
 interface EventCardProps {
   event: PastEvent;
@@ -10,7 +10,7 @@ interface EventCardProps {
 export const EventCard: React.FC<EventCardProps> = ({ event }) => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
-  // Fallback: se o evento não tiver fotos na sub-galeria, usa a foto principal do card
+
   const galleryPhotos =
     event.gallery && event.gallery.length > 0 ? event.gallery : [event.image];
 
@@ -29,10 +29,10 @@ export const EventCard: React.FC<EventCardProps> = ({ event }) => {
         />
 
         {/* Dark Shadow Overlay */}
-        <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 lg:opacity-0 lg:group-hover:opacity-95 transition-opacity duration-200 z-10" />
+        <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 lg:group-hover:opacity-95 transition-opacity duration-200 z-10" />
 
         {/* Textos Informativos */}
-        <div className="absolute inset-0 flex flex-col justify-end p-6 z-20 transform lg:translate-y-4 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-200 ease-out">
+        <div className="absolute inset-0 flex flex-col justify-end p-6 z-20 transform lg:translate-y-4  lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-200 ease-out">
           <span className="text-xs font-semibold text-citrine uppercase tracking-widest mb-1.5">
             {event.category}
           </span>
