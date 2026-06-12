@@ -43,7 +43,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-slate-950/95 flex items-center justify-center p-4 backdrop-blur-sm transition-all duration-300"
+      className="fixed inset-0 z-50 bg-dark-prussian flex items-center justify-center p-4 backdrop-blur-sm transition-all duration-300"
       onClick={onClose}
     >
 
